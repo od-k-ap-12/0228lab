@@ -10,20 +10,20 @@ namespace _0228lab
     {
         public static void ToCountWords(string Text)
         {
-            Dictionary<string, int> UniqueWordCounter = new Dictionary<string, int>(0);
+            Dictionary<string, int> WordCounter = new Dictionary<string, int>(0);
             string[] TextArray = Text.Split(new Char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string str in TextArray)
             {
-                if (UniqueWordCounter.ContainsKey(str) == true)
+                if (WordCounter.ContainsKey(str) == true)
                 {
-                    UniqueWordCounter[str]++;
+                    WordCounter[str]++;
                 }
                 else
                 {
-                    UniqueWordCounter.Add(str, 1);
+                    WordCounter.Add(str, 1);
                 }
             }
-            foreach (KeyValuePair<string, int> keyValue in UniqueWordCounter)
+            foreach (KeyValuePair<string, int> keyValue in WordCounter)
             {
                 Console.WriteLine(keyValue.Key + " : " + keyValue.Value);
             }
